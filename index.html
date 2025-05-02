@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cybersecurity, Cloud, Systems Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        body {
+            background: #0a192f;
+            color: #8892b0;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        /* Header Styles */
+        header {
+            position: relative;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: linear-gradient(45deg, #0a192f, #172a45);
+        }
+
+        .profile-img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            margin-bottom: 2rem;
+            border: 3px solid #64ffda;
+        }
+
+        .profile-container {
+            background: #112240;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(10, 25, 47, 0.95);
+            z-index: 1000;
+            padding: 1rem 0;
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        nav a {
+            color: #64ffda;
+            text-decoration: none;
+            font-size: 1.1rem;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #fff;
+        }
+
+        /* Sections */
+        section {
+            padding: 5rem 0;
+        }
+
+        h2 {
+            color: #ccd6f6;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+
+        /* Projects Grid */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .project-card {
+            background: #112240;
+            padding: 2rem;
+            border-radius: 4px;
+            transition: transform 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+        }
+
+        /* Contact Form */
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 1rem;
+            background: #112240;
+            border: 1px solid #233554;
+            color: #ccd6f6;
+            border-radius: 4px;
+        }
+
+        button {
+            background: #64ffda;
+            color: #0a192f;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: transform 0.3s;
+        }
+
+        button:hover {
+            transform: translateY(-3px);
+        }
+
+        /* Social Links */
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .social-links a {
+            color: #64ffda;
+            font-size: 1.5rem;
+            transition: color 0.3s;
+        }
+
+        .social-links a:hover {
+            color: #fff;
+        }
+
+        /* Download CV */
+        .download-cv {
+            text-align: center;
+            margin-top: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <header>
+        <div class="container profile-container">
+            <img src="20250220_123454.jpg" alt="BALDWIN" class="profile-img">
+            <h1>Baldwin Peter Kpodo</h1>
+            <p>Systems | Cloud | Cybersecurity | Junior DevOps Engineer</p>
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/kpodo-baldwin-peter" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/Yelom29" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="https://wa.me/+233551575713" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                <a href="mailto:baldwinkpodo@gmail.com"><i class="fas fa-envelope"></i></a>
+            </div>
+        </div>
+    </header>
+
+    <section id="about">
+        <div class="container">
+            <h2>About Me</h2>
+            <p>Hello! I am Baldwin, a Results-driven Systems, Cloud, Cybersecurity, and Junior DevOps Engineer with a
+                strong foundation in designing,
+                implementing, and securing IT infrastructures. Skilled in cloud computing, automation, network security,
+                 and system administration, with hands-on experience in AWS, Azure, Linux, and containerization technologies.
+                 Adept at managing CI/CD pipelines, infrastructure as code (IaC), and security best practices to enhance system
+                 efficiency, scalability, and resilience. Passionate about cybersecurity, with expertise in threat detection, risk assessment,
+                 and compliance to safeguard enterprise environments.
+
+                Proficient in scripting and automation (Python, Bash), cloud security, server hardening, and continuous monitoring,
+                ensuring high availability and performance of cloud-native and on-premises systems. A detail-oriented problem solver
+                with a proactive approach to mitigating security risks and optimizing IT workflows. Committed to continuous learning
+                and staying ahead of emerging technologies and industry best practices to deliver secure, scalable, and reliable solutions.</p>
+            <div class="download-cv">
+                <a href="Baldwin Kpodo - Systems, Cloud and Network Engineer Resume.pdf" download>
+                    <button>Download CV</button>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects">
+        <div class="container">
+            <h2>Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <h3>Project 1</h3>
+                    <h1>React Portal Application</h1>
+                    <p>Developed a user portal with React + Vite for registration, login, and dashboard functionalities.
+                    Integrated AWS Lambda for backend processing</p>
+                    <a href="https://gold-grid-fam.vercel.app" target="_blank">Gold Grid Family Data App</a>
+                </div>
+                <!-- Add more project cards -->
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="container">
+            <h2>Contact Me</h2>
+            <form class="contact-form" action="https://formspree.io/f/xpwarpaz" method="POST">
+                <div class="form-group">
+                    <input type="text" id="name" name="name" placeholder="Name" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" id="email" name="email" placeholder="Email" required>
+                </div>
+                <div class="form-group">
+                    <textarea id="message" name="message" placeholder="Message" rows="5" required></textarea>
+                </div>
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
