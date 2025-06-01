@@ -102,11 +102,61 @@
             background: #112240;
             padding: 2rem;
             border-radius: 4px;
-            transition: transform 0.3s;
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: 1px solid #1e3a5f;
+            position: relative;
         }
 
         .project-card:hover {
             transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .project-card h3 {
+            color: #64ffda;
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .project-card h4 {
+            color: #ccd6f6;
+            font-size: 1.3rem;
+            margin: 0.5rem 0;
+        }
+
+        .project-card p {
+            margin: 1rem 0;
+            min-height: 80px;
+        }
+
+        .project-card a {
+            display: inline-block;
+            margin-top: 1rem;
+            color: #64ffda;
+            text-decoration: none;
+            transition: color 0.3s;
+            font-weight: 500;
+        }
+
+        .project-card a:hover {
+            color: #fff;
+            text-decoration: underline;
+        }
+
+        /* Tech badges */
+        .tech-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        .tech-badge {
+            background: rgba(100, 255, 218, 0.1);
+            color: #64ffda;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
         }
 
         /* Contact Form */
@@ -126,6 +176,12 @@
             border: 1px solid #233554;
             color: #ccd6f6;
             border-radius: 4px;
+            transition: border-color 0.3s;
+        }
+
+        input:focus, textarea:focus {
+            border-color: #64ffda;
+            outline: none;
         }
 
         button {
@@ -136,11 +192,12 @@
             border-radius: 4px;
             cursor: pointer;
             font-weight: bold;
-            transition: transform 0.3s;
+            transition: transform 0.3s, background 0.3s;
         }
 
         button:hover {
             transform: translateY(-3px);
+            background: #52e0c4;
         }
 
         /* Social Links */
@@ -152,13 +209,22 @@
         }
 
         .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: rgba(100, 255, 218, 0.1);
             color: #64ffda;
             font-size: 1.5rem;
-            transition: color 0.3s;
+            transition: all 0.3s;
         }
 
         .social-links a:hover {
             color: #fff;
+            transform: translateY(-5px);
+            background: rgba(100, 255, 218, 0.2);
         }
 
         /* Download CV */
@@ -167,9 +233,126 @@
             margin-top: 2rem;
         }
 
+        /* Floating Contact Buttons */
+        .floating-contact {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 999;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        
+        .contact-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            color: white;
+            font-size: 1.5rem;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .contact-btn::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.1);
+            transform: scale(0);
+            transition: transform 0.3s;
+            border-radius: 50%;
+        }
+        
+        .contact-btn:hover::after {
+            transform: scale(1.5);
+        }
+        
+        .contact-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+        }
+        
+        .whatsapp-btn {
+            background: #25D366;
+        }
+        
+        .email-btn {
+            background: #EA4335;
+        }
+        
+        .linkedin-btn {
+            background: #0A66C2;
+        }
+        
+        .github-btn {
+            background: #333;
+        }
+        
+        .contact-btn .tooltip {
+            position: absolute;
+            right: 70px;
+            background: #112240;
+            color: #64ffda;
+            padding: 8px 15px;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            white-space: nowrap;
+            opacity: 0;
+            transform: translateX(10px);
+            transition: all 0.3s;
+            pointer-events: none;
+            border: 1px solid #1e3a5f;
+        }
+        
+        .contact-btn:hover .tooltip {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 2rem;
+            border-top: 1px solid #1e3a5f;
+            margin-top: 2rem;
+        }
+
         @media (max-width: 768px) {
             .projects-grid {
                 grid-template-columns: 1fr;
+            }
+            
+            nav ul {
+                gap: 1rem;
+                padding: 0 1rem;
+            }
+            
+            h2 {
+                font-size: 2rem;
+            }
+            
+            .floating-contact {
+                bottom: 20px;
+                right: 20px;
+            }
+            
+            .contact-btn {
+                width: 50px;
+                height: 50px;
+                font-size: 1.2rem;
+            }
+            
+            .contact-btn .tooltip {
+                display: none;
             }
         }
     </style>
@@ -182,6 +365,26 @@
             <li><a href="#contact">Contact</a></li>
         </ul>
     </nav>
+
+    <!-- Floating Contact Buttons -->
+    <div class="floating-contact">
+        <a href="https://wa.me/+233551575713" class="contact-btn whatsapp-btn">
+            <i class="fab fa-whatsapp"></i>
+            <span class="tooltip">Message on WhatsApp</span>
+        </a>
+        <a href="mailto:baldwinkpodo@gmail.com" class="contact-btn email-btn">
+            <i class="fas fa-envelope"></i>
+            <span class="tooltip">Send Email</span>
+        </a>
+        <a href="https://www.linkedin.com/in/kpodo-baldwin-peter" class="contact-btn linkedin-btn">
+            <i class="fab fa-linkedin"></i>
+            <span class="tooltip">Connect on LinkedIn</span>
+        </a>
+        <a href="https://github.com/Yelom29" class="contact-btn github-btn">
+            <i class="fab fa-github"></i>
+            <span class="tooltip">View GitHub</span>
+        </a>
+    </div>
 
     <header>
         <div class="container profile-container">
@@ -214,7 +417,7 @@
                 and staying ahead of emerging technologies and industry best practices to deliver secure, scalable, and reliable solutions.</p>
             <div class="download-cv">
                 <a href="Baldwin Kpodo - Systems, Cloud and Network Engineer Resume.pdf" download>
-                    <button>Download CV</button>
+                    <button><i class="fas fa-download"></i> Download CV</button>
                 </a>
             </div>
         </div>
@@ -224,14 +427,55 @@
         <div class="container">
             <h2>Projects</h2>
             <div class="projects-grid">
+                <!-- Project 1 -->
                 <div class="project-card">
                     <h3>Project 1</h3>
-                    <h1>React Portal Application</h1>
-                    <p>Developed a user portal with React + Vite for registration, login, and dashboard functionalities.
-                    Integrated AWS Lambda for backend processing</p>
-                    <a href="https://gold-grid-fam.vercel.app" target="_blank">Gold Grid Family Data App</a>
+                    <h4>React Portal Application</h4>
+                    <p>Developed a user portal with React + Vite for registration, login, and dashboard functionalities. Integrated AWS Lambda for backend processing.</p>
+                    <a href="https://gold-grid-fam.vercel.app" target="_blank">View Gold Grid Family Data App</a>
+                    <div class="tech-badges">
+                        <span class="tech-badge">React</span>
+                        <span class="tech-badge">AWS Lambda</span>
+                        <span class="tech-badge">Vite</span>
+                    </div>
                 </div>
-                <!-- Add more project cards -->
+                
+                <!-- Project 2 -->
+                <div class="project-card">
+                    <h3>Project 2</h3>
+                    <h4>Gold Grid Real-Time Data Dashboard</h4>
+                    <p>Designed a real-time data dashboard using AWS DynamoDB, automated with Terraform for seamless deployment, and integrated user notifications.</p>
+                    <div class="tech-badges">
+                        <span class="tech-badge">AWS DynamoDB</span>
+                        <span class="tech-badge">Terraform</span>
+                        <span class="tech-badge">Real-time Analytics</span>
+                    </div>
+                </div>
+                
+                <!-- Project 3 -->
+                <div class="project-card">
+                    <h3>Project 3</h3>
+                    <h4>Dockerized Web Application</h4>
+                    <p>Containerized a PHP application using Docker for cross-platform compatibility and deployed it on AWS for scalability and high availability.</p>
+                    <div class="tech-badges">
+                        <span class="tech-badge">Docker</span>
+                        <span class="tech-badge">AWS</span>
+                        <span class="tech-badge">PHP</span>
+                    </div>
+                </div>
+                
+                <!-- Project 4 -->
+                <div class="project-card">
+                    <h3>Project 4</h3>
+                    <h4>Automated AWS Infrastructure</h4>
+                    <p>Automated S3 bucket provisioning with Terraform and deployed Lambda functions for event-driven processing and serverless architecture.</p>
+                    <div class="tech-badges">
+                        <span class="tech-badge">Terraform</span>
+                        <span class="tech-badge">AWS S3</span>
+                        <span class="tech-badge">Lambda</span>
+                        <span class="tech-badge">IaC</span>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -249,10 +493,18 @@
                 <div class="form-group">
                     <textarea id="message" name="message" placeholder="Message" rows="5" required></textarea>
                 </div>
-                <button type="submit">Send Message</button>
+                <button type="submit"><i class="fas fa-paper-plane"></i> Send Message</button>
             </form>
+            <!-- Contact cards have been removed per request -->
         </div>
     </section>
+
+    <footer>
+        <div class="container">
+            <p>© 2023 Baldwin Peter Kpodo. All rights reserved.</p>
+            <p>Cybersecurity | Cloud Engineering | DevOps</p>
+        </div>
+    </footer>
 
     <script>
         // Smooth scrolling for navigation links
@@ -262,6 +514,40 @@
                 document.querySelector(this.getAttribute('href')).scrollIntoView({
                     behavior: 'smooth'
                 });
+            });
+        });
+        
+        // Add active class to current navigation item
+        window.addEventListener('scroll', function() {
+            const sections = document.querySelectorAll('section');
+            const navLinks = document.querySelectorAll('nav a');
+            
+            let current = '';
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                if(pageYOffset >= sectionTop - 100) {
+                    current = section.getAttribute('id');
+                }
+            });
+            
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if(link.getAttribute('href').includes(current)) {
+                    link.classList.add('active');
+                }
+            });
+        });
+        
+        // Floating button animations
+        const contactButtons = document.querySelectorAll('.contact-btn');
+        contactButtons.forEach(button => {
+            button.addEventListener('mouseenter', () => {
+                button.style.transform = 'translateY(-5px)';
+            });
+            
+            button.addEventListener('mouseleave', () => {
+                button.style.transform = 'translateY(0)';
             });
         });
     </script>
